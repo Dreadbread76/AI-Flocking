@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7626946145d7d0e40bbfa721668fca55, type: 3}
+  m_Name: Red Composite Behavior
+  m_EditorClassIdentifier: 
+  Flocks:
+  - behavior: {fileID: 11400000, guid: cdb25de23abcd904594bfc42ed22b617, type: 2}
+    weight: 1
+  - behavior: {fileID: 11400000, guid: b0fbf004b2af56b429f590ae9e3c37a7, type: 2}
+    weight: 2
+  - behavior: {fileID: 11400000, guid: efaa575b567dfa84a881778eba40f30f, type: 2}
+    weight: 4
+  - behavior: {fileID: 11400000, guid: 49735905bf70dac4dabe44ecb19497c0, type: 2}
+    weight: 1
+  - behavior: {fileID: 11400000, guid: db876af801286404584f311383137c0d, type: 2}
+    weight: 2
+  - behavior: {fileID: 11400000, guid: db876af801286404584f311383137c0d, type: 2}
+    weight: 10
+  - behavior: {fileID: 11400000, guid: db876af801286404584f311383137c0d, type: 2}
+    weight: 1
+  - behavior: {fileID: 11400000, guid: 8f50dbd6522cd414a816b92c1408d8c5, type: 2}
+    weight: 1
