@@ -28,7 +28,7 @@ public class HideBehaviour : FilteredFlockBehavior
 
             }
         }
-        if (nearestObstacle = null)
+        if (nearestObstacle == null)
         {
             return Vector2.zero;
         }

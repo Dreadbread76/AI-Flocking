@@ -9,19 +9,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1777cd872c90d634b9dea255b906f22c, type: 3}
+  m_Script: {fileID: 11500000, guid: 7626946145d7d0e40bbfa721668fca55, type: 3}
   m_Name: Blue Composite Behavior
   m_EditorClassIdentifier: 
   Flocks:
   - behavior: {fileID: 11400000, guid: cdb25de23abcd904594bfc42ed22b617, type: 2}
-    weight: 0
-  - behavior: {fileID: 0}
-    weight: 0
-  - behavior: {fileID: 0}
-    weight: 0
-  - behavior: {fileID: 0}
-    weight: 0
-  - behavior: {fileID: 0}
-    weight: 0
+    weight: 1
   - behavior: {fileID: 11400000, guid: b0fbf004b2af56b429f590ae9e3c37a7, type: 2}
-    weight: 0
+    weight: 2
+  - behavior: {fileID: 11400000, guid: efaa575b567dfa84a881778eba40f30f, type: 2}
+    weight: 4
+  - behavior: {fileID: 11400000, guid: 49735905bf70dac4dabe44ecb19497c0, type: 2}
+    weight: 1
+  - behavior: {fileID: 11400000, guid: db876af801286404584f311383137c0d, type: 2}
+    weight: 2
+  - behavior: {fileID: 11400000, guid: f3f7771eb6626e046bdc01361a3269a3, type: 2}
+    weight: 1
+  - behavior: {fileID: 11400000, guid: 9926aed1a5d506c48b95aec39a216f89, type: 2}
+    weight: 2
+  - behavior: {fileID: 11400000, guid: 8f50dbd6522cd414a816b92c1408d8c5, type: 2}
+    weight: 1
