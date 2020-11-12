@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Flock\AIStateMachine.cs" />
     <Compile Include="Assets\Scripts\Flock\Behavior Scripts\AlignmentBehavior.cs" />
     <Compile Include="Assets\Scripts\Flock\Behavior Scripts\AreaAvoidanceBehavior.cs" />
     <Compile Include="Assets\Scripts\Flock\Behavior Scripts\AvoidanceBehavior.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Assets\Scripts\Flock\Behavior Scripts\FlockBehavior.cs" />
     <Compile Include="Assets\Scripts\Flock\Behavior Scripts\HideBehaviour.cs" />
     <Compile Include="Assets\Scripts\Flock\Behavior Scripts\inSteerCohBehavior.cs" />
+    <Compile Include="Assets\Scripts\Flock\Behavior Scripts\PounceBehaviour.cs" />
     <Compile Include="Assets\Scripts\Flock\Behavior Scripts\PursuitBehavior.cs" />
     <Compile Include="Assets\Scripts\Flock\Behavior Scripts\RedCompositeBehavior.cs" />
     <Compile Include="Assets\Scripts\Flock\Behavior Scripts\StayInRadiusBehavior.cs" />
