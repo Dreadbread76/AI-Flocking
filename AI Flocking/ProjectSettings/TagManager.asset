@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Sheep
   - Wolf
+  - Red
+  - Blue
   layers:
   - Default
   - TransparentFX
