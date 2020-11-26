@@ -4,6 +4,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Flock/Behavior/Pursuit")]
 public class PursuitBehavior : FilteredFlockBehavior
 {
+    public List<Transform> enemies;
+   
     public override Vector2 CalculateMove(FlockAgent agent, List<Transform> context, List<Transform> areaContext, Flock flock)
     {
         List<Transform> areaFilteredContext = (filter == null) ? areaContext : filter.Filter(agent, areaContext);
@@ -27,7 +29,20 @@ public class PursuitBehavior : FilteredFlockBehavior
                 direction *= weight;
             }
             move += direction * weight;
+            enemies = areaContext;
+            if (weight > 0)
+            {
+                agent.Animator.SetBool("Pursue", true);
+            }
+            else
+            {
+                agent.Animator.SetBool("Pursue", false);
+            }
+            
         }
+
         return move;
+        
     }
+   
 }

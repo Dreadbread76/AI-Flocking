@@ -5,7 +5,10 @@ using UnityEngine;
 public class RedAIStateMachine : MonoBehaviour
 {
     public RedCompositeBehavior RedComposite;
-     GameObject enemyTarget;
+    public PursuitBehavior Pursuit;
+    public Animator stateAnim;
+
+  
 
     // Start is called before the first frame update
     public enum Red
@@ -21,23 +24,27 @@ public class RedAIStateMachine : MonoBehaviour
         StartCoroutine(RedState());
     }
 
-    private void Update()
-    {
-        enemyTarget = GameObject.FindGameObjectWithTag("Enemy");
-    }
-
+   
     IEnumerator RedState()
     {
+
         while (redStates == Red.Wander)
         {
             RedPatrol();
-
+            if (Pursuit.enemies != null)
+            {
+                redStates = Red.Pursue;
+                
+            }
             yield return 0;
         }
         while (redStates == Red.Pursue)
         {
             RedPursue();
-
+            if (Pursuit.enemies == null)
+            {
+                redStates = Red.Wander;
+            }
             yield return 0;
         }
 
@@ -45,10 +52,15 @@ public class RedAIStateMachine : MonoBehaviour
 
     public void RedPatrol()
     {
+        Debug.Log("Wander");
         RedComposite.Flocks[6].weight = 0;
+      
+
     }
     public void RedPursue()
     {
+        Debug.Log("Pursue");
         RedComposite.Flocks[6].weight = 10;
+      
     }
 }

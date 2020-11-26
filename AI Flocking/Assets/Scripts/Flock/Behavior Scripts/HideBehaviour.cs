@@ -6,6 +6,7 @@ public class HideBehaviour : FilteredFlockBehavior
 {
     public ContextFilter obstaclesFilter;
     public float hideBehindObstacleDistance = 2f;
+    public List<Transform> enemies;
 
     public override Vector2 CalculateMove(FlockAgent agent, List<Transform> context, List<Transform> areaContext, Flock flock)
     {
@@ -21,11 +22,17 @@ public class HideBehaviour : FilteredFlockBehavior
         foreach (Transform item in obstacleContext)
         {
             float Distance = Vector2.Distance(item.position, agent.transform.position);
+
+            //Get when enemies are in range and start animating
             if(Distance < nearestDistance)
             {
                 nearestObstacle = item;
                 nearestDistance = Distance;
-
+                agent.Animator.SetBool("flee", true);
+            }
+            else
+            {
+                agent.Animator.SetBool("flee", false);
             }
         }
         if (nearestObstacle == null)
@@ -50,7 +57,8 @@ public class HideBehaviour : FilteredFlockBehavior
         Debug.DrawRay(move, Vector2.up * 3f);
 
         move -= (Vector2)agent.transform.position;
-
+        enemies = areaContext;
+       
         return move;
     }
 }

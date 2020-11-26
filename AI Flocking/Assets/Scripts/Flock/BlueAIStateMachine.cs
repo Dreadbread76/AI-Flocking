@@ -5,7 +5,10 @@ using UnityEngine;
 public class BlueAIStateMachine : MonoBehaviour
 {
 
-    public BlueCompositeBehavior BlueComposite;
+    public RedCompositeBehavior BlueComposite;
+    public HideBehaviour Hide;
+    public Animator stateAnim;
+
     // Start is called before the first frame update
    public enum Blue
     {
@@ -17,16 +20,26 @@ public class BlueAIStateMachine : MonoBehaviour
     public Blue blueStates;
     IEnumerator BlueState()
     {
+       
+
         while (blueStates == Blue.Wander)
         {
             BluePatrol();
+            if (Hide.enemies != null)
+            {
+                blueStates = Blue.FleeNHide;
+
+            }
 
             yield return 0;
         }
         while (blueStates == Blue.FleeNHide)
         {
             BlueFleeNHide();
-
+            if (Hide.enemies == null)
+            {
+                blueStates = Blue.Wander;
+            }
             yield return 0;
         }
 
@@ -36,9 +49,12 @@ public class BlueAIStateMachine : MonoBehaviour
     {
         Debug.Log("Wander Enter");
         BlueComposite.Flocks[6].weight = 0;
+        stateAnim.SetBool("flee", false);
     }
     public void BlueFleeNHide()
     {
+        Debug.Log("Flee Enter");
         BlueComposite.Flocks[6].weight = 2;
+        stateAnim.SetBool("flee", true);
     }
 }
