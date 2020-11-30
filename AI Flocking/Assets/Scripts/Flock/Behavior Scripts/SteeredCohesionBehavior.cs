@@ -23,6 +23,7 @@ public class SteeredCohesionBehavior : CohesionBehavior
         cohesionMove /= context.Count;
 
         cohesionMove -= (Vector2)agent.transform.position;
+        //Smoothen movement in flock
         cohesionMove = Vector2.SmoothDamp(agent.transform.up, cohesionMove, ref currentVelocity, agentSmoothTime);
         return cohesionMove;
     }

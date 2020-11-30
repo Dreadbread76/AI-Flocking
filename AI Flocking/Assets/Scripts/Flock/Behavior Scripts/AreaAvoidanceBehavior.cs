@@ -23,7 +23,7 @@ public class AreaAvoidanceBehavior : FilteredFlockBehavior
                 avoidanceMove += (Vector2)(agent.transform.position - item.position);
             }
         }
-
+        //Do not move where the object is
         if (AvoidCount > 0)
         {
             avoidanceMove /= AvoidCount;

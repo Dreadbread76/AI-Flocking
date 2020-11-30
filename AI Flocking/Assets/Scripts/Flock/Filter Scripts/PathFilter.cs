@@ -9,9 +9,11 @@ public class PathFilter : ContextFilter
     {
         List<Transform> filtered = new List<Transform>();
 
+        //Add a path to follow for every unit
         foreach(Transform item in original)
         {
             Path path = item.GetComponentInParent<Path>();
+            //Add a path if there isnt one
             if (path == null)
             {
                 filtered.Add(item);

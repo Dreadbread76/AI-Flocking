@@ -16,9 +16,10 @@ public class RedCompositeBehavior : FlockBehavior
     public override Vector2 CalculateMove(FlockAgent agent, List<Transform> context, List<Transform> areaContext, Flock flock)
     {
         Vector2 move = Vector2.zero;
-
+        //for every unit in the flock
         for(int i = 0; i < Flocks.Length; i++)
         {
+            //move based on weight
             Vector2 partialMove = Flocks[i].behavior.CalculateMove(agent, context, areaContext, flock) * Flocks[i].weight;
 
             if(partialMove != Vector2.zero)
